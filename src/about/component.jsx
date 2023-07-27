@@ -16,11 +16,10 @@ function About() {
       <div className="components">
         <Component image={fire} h41="Year" h42="experience" h5="6" />
         <Component image={fire} h41="Year" h42="experience" h5="6" />
-        <Component image={fire} h41="Year" h42="experience" h5="6" />
       </div>
       <div className="qualification">
         <div className="qualification-part1">
-          <h1>Qualification</h1>
+          <p className="qualification-title">Qualification</p>
           <p className="journey">My personal journey</p>
         </div>
         <div className="qualification-part2">
@@ -29,6 +28,7 @@ function About() {
             <p className="education-text">Education</p>
           </div>
           <div className="education-places">
+            <Component2  work1="Computer" work2="Engineer" place="Peru - University" date="2009 - 2014"/>
             <Component2  work1="Computer" work2="Engineer" place="Peru - University" date="2009 - 2014"/>
           </div>
         </div>

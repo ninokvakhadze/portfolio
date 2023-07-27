@@ -4,20 +4,51 @@ import IG from "./images/IG.svg";
 import FB from "./images/FB.svg";
 import TW from "./images/TW.svg";
 import Github from "./images/Github.svg";
-import About  from "./components/component";
+import About  from "./about/component";
+import Projects from "./projects/component3";
+import Skills from "./skills/component2";
+import React, { useState } from "react";
+
 
 function App() {
+  const [activeComponent, setActiveComponent] = useState(0);
+  const [changeColor, setChangeColor] = useState(false);
+  const colorChange = (index) =>{
+    setChangeColor((prevState) => !prevState);
+    const body = document.querySelector('body');
+    const text = document.querySelector('button');
+    const button =  document.querySelector('.button2');
+    if (changeColor) {
+      body.style.backgroundColor = '';
+      text.style.color = ""
+      button.style.justifyContent ="";
+    } else {
+      body.style.backgroundColor = 'black'; 
+      text.style.color = "black"
+      button.style.justifyContent ="flex-end";
+    }
+  };
+
+  const about = (index) =>{
+    setActiveComponent(0)
+  }
+  const skills = (index) =>{
+    setActiveComponent(1)
+  }
+  const projects = (index) =>{
+    setActiveComponent(2)
+  }
   return (
-    <div className="App">
+    <div className="app">
       <div className="card">
         <header>
           <div className="header-texts">
-            <p className="header-text">ABOUT</p>
-            <p className="header-text">SKILLS</p>
-            <p className="header-text">PROJECTS</p>
+            <p onClick={about} className="header-text">ABOUT</p>
+            <p onClick={skills} className="header-text">SKILLS</p>
+            <p onClick={projects} className="header-text">PROJECTS</p>
           </div>
-          <div className="button">
-            <div className="button-circle"></div>
+          <div className="button2" onClick={colorChange}>
+            <div  className="button-circle"></div>
           </div>
         </header>
         <div className="bottom-part">
@@ -36,8 +67,11 @@ function App() {
               <img src={TW} alt="tw" className="logo"/>
               <img src={Github} alt="github" className="logo"/>
             </div>
+            <button>Contact me</button>
           </div>
-          <About/>
+          {activeComponent === 0 && <About />}
+          {activeComponent === 1 && <Skills />}
+          {activeComponent === 2 && <Projects />}
         </div>
       </div>
     </div>
