@@ -16,16 +16,15 @@ function App() {
   const colorChange = (index) =>{
     setChangeColor((prevState) => !prevState);
     const body = document.querySelector('body');
-    const text = document.querySelector('button');
     const button =  document.querySelector('.button2');
+    
     if (changeColor) {
       body.style.backgroundColor = '';
-      text.style.color = ""
       button.style.justifyContent ="";
     } else {
       body.style.backgroundColor = 'black'; 
-      text.style.color = "black"
       button.style.justifyContent ="flex-end";
+      
     }
   };
 
@@ -67,7 +66,7 @@ function App() {
               <img src={TW} alt="tw" className="logo"/>
               <img src={Github} alt="github" className="logo"/>
             </div>
-            <button>Contact me</button>
+            <button className={changeColor? "active" : ""}>Contact me</button>
           </div>
           {activeComponent === 0 && <About />}
           {activeComponent === 1 && <Skills />}

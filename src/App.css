@@ -4,8 +4,8 @@
   padding: 0px;
   box-sizing: border-box;
 }
-.change-color{
- background-color: #3333ff;
+.change-color {
+  background-color: #3333ff;
 }
 header {
   padding: 20px 15px;
@@ -57,7 +57,7 @@ header {
 }
 h2 {
   text-align: center;
-  color:#3333ff;
+  color: #3333ff;
   font-family: Poppins;
   font-size: 24px;
   font-style: normal;
@@ -103,11 +103,14 @@ button {
   background-color: #3333ff;
   color: #fff;
 }
+.active {
+  color: #000000;
+  background-color: #3333ff;
+}
 .education {
   display: flex;
 }
 @media screen and (min-width: 720px) {
-
   .app {
     height: 100vh;
   }
@@ -115,7 +118,7 @@ button {
     display: flex;
   }
   .information {
-    width: 300px;
+    max-width: 300px;
     height: 100vh;
     display: flex;
     gap: 15px;
@@ -147,19 +150,22 @@ button {
     gap: 10px;
     justify-content: center;
   }
-  
+
   button {
     width: 175px;
     height: 40px;
     align-self: center;
     border-radius: 15px;
-    border: none;
     cursor: pointer;
   }
-  button:hover{
+  button:hover {
     background-color: #fff;
     color: #3333ff;
     border: 2px solid #3333ff;
+  }
+  .active:hover {
+    color: #3333ff;
+    background-color: #000000;
   }
   .education {
     display: flex;
