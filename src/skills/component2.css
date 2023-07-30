@@ -1,3 +1,19 @@
+.skills{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.image{
+    width: 280px;
+}
+.skill-div{
+    width: 300px;
+    border: 2px solid #3333ff;
+    border-radius: 20px;
+    padding: 10px;
+}
 @media screen and (min-width: 720px){
 .skills{
     border-left: 2px solid #3333ff;;
