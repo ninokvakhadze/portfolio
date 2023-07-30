@@ -8,16 +8,16 @@ function Skills() {
   return (
     <div className="skills">
       <div className="skill-div">
-        <img src={html} className="image" />
+        <img src={html} className="image html" alt="skill" />
       </div>
       <div className="skill-div">
-        <img src={css} className="image" />
+        <img src={css} className="image small" alt="skill"  />
       </div>
       <div className="skill-div">
-        <img src={js} className="image" />
+        <img src={js} className="image small" alt="skill" />
       </div>
       <div className="skill-div">
-        <img src={reactLogo} className="image" />
+        <img src={reactLogo} className="image react" alt="skill"  />
       </div>
     </div>
   );

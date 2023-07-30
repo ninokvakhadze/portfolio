@@ -1,21 +1,80 @@
-.skills{
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
+.skills {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }
-.image{
-    width: 280px;
+.image {
+  width: 280px;
 }
-.skill-div{
-    width: 300px;
+.small{
+    width: 240px;
+}
+.skill-div {
+  width: 300px; 
+  height: 340px;
+  border: 2px solid #3333ff;
+  border-radius: 20px;
+  padding: 25px;
+}
+.react{
+    margin-left: -15px;
+}
+.html{
+    margin-left: -10px;
+}
+@media screen and (min-width: 720px) {
+  .skills {
+    border-left: 2px solid #3333ff;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    padding: 10px;
+  }
+  .skill-div {
+    width: 200px;
+    height: 240px;
     border: 2px solid #3333ff;
     border-radius: 20px;
-    padding: 10px;
+  }
+  .image {
+    width: 180px;
+  }
+  .small{
+    width: 170px;
+    margin-left: -12px;
+  }
+  .html{
+    margin-left: -13px;
+  }
+
 }
-@media screen and (min-width: 720px){
-.skills{
-    border-left: 2px solid #3333ff;;
+@media screen and (min-width: 1020px){
+    .skill-div {
+        width: 300px;
+        height: 360px;
+      }
+      .image {
+        width: 280px;
+      }
+      .skills{
+        padding-top: 20px;
+      }
+      .small{
+        margin-left: -15px;
+      }
 }
+@media screen and (min-width: 1420px){
+    .skill-div {
+        width: 400px;
+        height: 460px;
+      }
+      .image {
+        width: 380px;
+      }
+      .skills{
+        padding-top: 100px;
+      }
 }
