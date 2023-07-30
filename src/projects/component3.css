@@ -10,6 +10,7 @@
 }
 .project-image {
   width: 280px;
+  height: 180px;
 }
 .name {
   text-align: left;
@@ -46,6 +47,7 @@
 @media screen and (min-width: 720px) {
   .projects {
     width: 100vw;
+    justify-content: center;
     border-left: 2px solid #3333ff;;
   }
 }
@@ -53,7 +55,7 @@
   .projects {
     width: 100vw;
     display: grid;
-    padding-left: 15px;
+    padding: 20px;
     grid-template-columns: auto auto;
   }
   .project-div {
@@ -61,11 +63,12 @@
   }
   .project-image {
     width: 350px;
+    height: 250px;
   }
   .link:hover{
     transition: 1s ;
-    margin-right: -6px;
-    margin-left: -6px;
+    margin-right: 6px;
+    margin-left: 6px;
   }
 }
 @media screen and (min-width: 1440px) {
