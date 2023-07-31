@@ -2,6 +2,7 @@ import "./component.css";
 import fire from "../images/fire.svg";
 import education from "../images/education.svg";
 import calendar from "../images/calendar.svg";
+import project from "../images/project.svg"
 
 function About() {
   return (
@@ -14,8 +15,8 @@ function About() {
         </p>
       </div>
       <div className="components">
-        <Component image={fire} h41="Year" h42="experience" h5="6" />
-        <Component image={fire} h41="Year" h42="experience" h5="6" />
+        <Component image={fire} h41="Year" h42="experience" h5="1" />
+        <Component image={project} h41="Completed" h42="projects" h5="22" />
       </div>
       <div className="qualification">
         <div className="qualification-part1">
@@ -28,8 +29,8 @@ function About() {
             <p className="education-text">Education</p>
           </div>
           <div className="education-places">
-            <Component2  work1="Computer" work2="Engineer" place="Peru - University" date="2009 - 2014"/>
-            <Component2  work1="Computer" work2="Engineer" place="Peru - University" date="2009 - 2014"/>
+            <Component2  work1="School" place="Tkbuli #7 public schold" date="2012 - "/>
+            <Component2  work1="Bitcamp"   date="2023"/>
           </div>
         </div>
       </div>

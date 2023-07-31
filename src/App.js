@@ -57,7 +57,7 @@ function App() {
               <h2>NINO KVAKHADZE</h2>
               <h3>FRONTEND DEVELOPER</h3>
               <p className="information-text">
-                High level experience in web design and development knowledge.
+                Junior Frontend Developer
               </p>
             </div>
             <div className="logos">
