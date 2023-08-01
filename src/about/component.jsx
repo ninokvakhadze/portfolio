@@ -27,7 +27,7 @@ function About() {
             <p className="education-text">Education</p>
           </div>
           <div className="education-places">
-            <Component2  work1="School" place="Tkbuli #7 public schold" date="2012 - "/>
+            <Component2  work1="School" place="Tkbuli #7 public school" date="2012 - "/>
             <Component2  work1="Bitcamp"   date="2023"/>
           </div>
         </div>
