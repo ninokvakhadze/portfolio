@@ -10,8 +10,6 @@ function About() {
       <div className="about-div">
         <h1>About</h1>
         <p className="about-text">
-          Web developer, with extensive knowledge and years of experience,
-          working in web technologies and UI/UX design, delivering quality work.
         </p>
       </div>
       <div className="components">

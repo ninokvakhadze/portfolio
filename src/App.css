@@ -110,6 +110,9 @@ button {
 .education {
   display: flex;
 }
+.in{
+  margin-top: 8px;
+}
 @media screen and (min-width: 720px) {
   .app {
     height: 100vh;
