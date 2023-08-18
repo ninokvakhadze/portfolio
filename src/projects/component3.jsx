@@ -21,9 +21,23 @@ import task4 from "../images/task4.PNG";
 import task3 from "../images/task3.PNG";
 import colab1 from "../images/preview.jpg";
 import colab2 from "../images/display.png";
+import card_details from "../images/Capture.PNG";
+import search from "../images/search.PNG"
 function Projects() {
   return (
     <div className="projects">
+      <Project
+        image={search}
+        name="github user search app"
+        link="https://github-user-search-app-ochre.vercel.app/"
+        link2 = "https://github.com/ninokvakhadze/github-user-search-app"
+      />
+      <Project
+        image={card_details}
+        name="interactive-card-details"
+        link = "https://interactive-card-details-form-taupe.vercel.app/"
+        link2="https://github.com/ninokvakhadze/interactive-card-details-form"
+      />
       <Project
         image={todo}
         name="To Do app"
@@ -93,8 +107,8 @@ function Projects() {
         <Project
         image={accordion}
         name="FAQ accordion card"
-        link="https://faq-accordion-card-murex-nine.vercel.app/"
-        link2 = "https://github.com/ninokvakhadze/Faq-accordion-card"
+        link="https://ninokvakhadze.github.io/Faq-accordion-card/"
+        link2 = "https://github.com/ninokvakhadze/Faq-accordion-card/tree/master"
       />
         <Project
         image={equalizer}
