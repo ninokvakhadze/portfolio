@@ -14,7 +14,7 @@ function About() {
       </div>
       <div className="components">
         <Component image={fire} h41="Year" h42="experience" h5="1" />
-        <Component image={project} h41="Completed" h42="projects" h5="22" />
+        <Component image={project} h41="Completed" h42="projects" h5="24" />
       </div>
       <div className="qualification">
         <div className="qualification-part1">
