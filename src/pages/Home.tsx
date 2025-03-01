@@ -13,8 +13,7 @@ function Home() {
       <FindMe>
         <Commented>// find my profile on Github:</Commented>
         <GitLink>
-          <Variable>const</Variable> <VarName>githubLink</VarName> =
-          <Linked href="https://github.com/ninokvakhadze"> "https://github.com/ninokvakhadze"</Linked>
+          <Variable>const</Variable> <VarName>githubLink</VarName> = <Linked href="https://github.com/ninokvakhadze">"https://github.com/ninokvakhadze"</Linked>
         </GitLink>
       </FindMe>
     </HomeDiv>
@@ -27,7 +26,7 @@ const HomeDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 100%;
+  width: 94vw;
   background-color: rgba(1, 22, 39, 0.95);
   padding: 15px;
   min-height: 81vh;
@@ -38,6 +37,7 @@ const Hello = styled.h2`
   font-family: "Fira code", sans-serif;
   text-align: left;
   font-weight: 400;
+  font-size: 14px;
   color: #e5e9f0;
   @media screen and (min-width: 768px){
     font-size: 18px;
@@ -52,16 +52,22 @@ const Job = styled.h3`
   }
 `;
 const NameSpan = styled.span`
-  font-size: 58px;
+  font-size: 46px;
   text-align: left;
   font-weight: 600;
   margin-top: 10px;
+  @media screen and (min-width: 768px){
+  font-size: 58px;
+  }
 `;
 const FindMe = styled.div`
   font-family: "Fira code", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   text-align: left;
+  @media screen and (min-width: 768px){
+  font-size: 16px;
+  }
 `;
 const Commented = styled.p`
   color: #607b96;

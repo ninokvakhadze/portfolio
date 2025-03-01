@@ -19,4 +19,5 @@ const Main = styled.main`
   background-image: url(${bacgroundImg});
   background-position: center;
   background-size: 100%;
+  width: 100%;
 `;
