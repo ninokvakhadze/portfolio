@@ -33,7 +33,8 @@ const NavDiv = styled.div<{ toggle: boolean }>`
   width: 100%;
   min-height: 81vh;
   display: ${({ toggle }) => (toggle ? "block" : "none")};
-  @media screen and (min-width: 768px) {
+  z-index: 1;
+  @media screen and (min-width: 1024px) {
     position: static;
     display: flex;
     min-height: unset;
