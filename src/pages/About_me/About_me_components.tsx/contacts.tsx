@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import phone from "../../assets/phone-solid.svg";
-import envelope from "../../assets/envelope-solid.svg";
+import phone from "../../../assets/phone-solid.svg";
+import envelope from "../../../assets/envelope-solid.svg";
 
 function Contacts() {
   return (
