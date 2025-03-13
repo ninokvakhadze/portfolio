@@ -1,13 +1,19 @@
 import styled from "styled-components";
 import { createContext, useState, useContext } from "react";
-import AboutMeNav from "./AboutMeNav";
+import AboutMeNav from "./About_me_components.tsx/AboutMeNav";
+
+type ActiveState = { button1: boolean; button2: boolean };
+
 
 interface AboutMeContextType {
   activeFile: boolean;
   setActiveFile: React.Dispatch<React.SetStateAction<boolean>>;
-  toggleHandler: (button: "first" | "second" | null) => void;
-  active: "first" | "second" | null;
-  setActive: React.Dispatch<React.SetStateAction<"first" | "second" | null>>;
+  toggleHandler: (button: "first" | "second") => void;
+  active: {
+    button1 : boolean,
+    button2: boolean
+  } ;
+  setActive: React.Dispatch<React.SetStateAction<ActiveState>>;
 }
 
 const AboutMeContext = createContext<AboutMeContextType | undefined>(undefined);
@@ -20,11 +26,17 @@ export function useAboutMe() {
 }
 
 const About_me: React.FC = () => {
-  const [active, setActive] = useState<"first" | "second" | null>(null);
+  const [active, setActive] = useState<{ button1: boolean; button2: boolean }>({
+    button1: true,
+    button2: false,
+  });
   const [activeFile, setActiveFile] = useState<boolean>(true);
 
-  const toggleHandler = (button: "first" | "second" | null) => {
-    setActive((prev) => (prev === button ? null : button));
+  const toggleHandler = (button: "first" | "second") => {
+    setActive((prev) => ({
+      button1: button === "first" ? !prev.button1 : prev.button1,
+      button2: button === "second" ? !prev.button2 : prev.button2,
+    }));
   };
 
   return (
@@ -47,5 +59,14 @@ const MainDiv = styled.div`
   width: 94vw;
   background-color: rgba(1, 22, 39, 0.95);
   //   padding: 15px;
-  min-height: 81vh;
+  height: 81vh;
+  overflow-y: auto; 
+  :-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+  }
+  :-webkit-scrollbar-track {
+    background:  rgba(1, 22, 39, 0.95);
+    border-radius: 10px;
+  }
 `;

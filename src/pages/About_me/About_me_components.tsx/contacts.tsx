@@ -7,7 +7,7 @@ function Contacts() {
     <ContactsDiv>
       <ContactsComponent>
         <AddresImg src={phone} />
-        <Addres>595 48 26 21</Addres>
+        <Addres>+(995) 595 48 26 21</Addres>
       </ContactsComponent>
       <ContactsComponent>
         <AddresImg src={envelope} />

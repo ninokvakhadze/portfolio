@@ -7,17 +7,17 @@ import { useAboutMe } from "../About_me";
 
 
 export default function Personal() {
-  const {  setActiveFile } = useAboutMe();
+  const {  setActiveFile, activeFile } = useAboutMe();
 
   return (
     <PersonalDiv>
-      <FileDiv onClick={() => {setActiveFile(true)}}>
-        <FileArrow src={fileArrow} />
+      <FileDiv onClick={() => {setActiveFile(true)}} >
+        <FileArrow src={fileArrow} active={activeFile == true}/>
         <FileImg src={fileImg1} />
         <FileName>personal</FileName>
       </FileDiv>
       <FileDiv onClick={() => {setActiveFile(false)}}>
-        <FileArrow src={fileArrow} />
+        <FileArrow src={fileArrow} active={activeFile == false}/>
         <FileImg src={fileImg2} />
         <FileName>professional</FileName>
       </FileDiv>
@@ -34,9 +34,14 @@ const FileDiv = styled.div`
   gap: 7px;
   margin-top: 5px;
 `;
-const FileArrow = styled.img`
+const FileArrow = styled.img<{active: boolean}>`
   width: 12px;
   transform: rotate(90deg);
+  ${({ active }) =>
+    active &&
+    `
+      transform: rotate(180deg);
+    `}
 `;
 const FileImg = styled.img`
   width: 12px;

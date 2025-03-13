@@ -1,23 +1,25 @@
 import styled from "styled-components";
-import arrowDown from "../../assets/caret-down-solid.svg";
-import Contacts from "./About_me_components.tsx/contacts";
-import Personal from "./About_me_components.tsx/Personal";
-import { useAboutMe } from "./About_me";
+import arrowDown from "../../../assets/caret-down-solid.svg";
+import Contacts from "./contacts";
+import Personal from "./Personal";
+import Information from "./Information";
+import { useAboutMe } from "../About_me";
 function AboutMeNav() {
   const { toggleHandler, active } = useAboutMe();
   return (
     <>
       <PageTitle>_about-me</PageTitle>
       <ComponentDiv onClick={() => toggleHandler("first")}>
-        <Arrow src={arrowDown} isOpen={active === "first"} />
+        <Arrow src={arrowDown} isOpen={active.button1 === true} />
         <ComponentTitle>personal_info</ComponentTitle>
       </ComponentDiv>
-      {active == "first" ? <Personal /> : null}
+      {active.button1 == true ? <Personal /> : null}
       <ComponentDiv onClick={() => toggleHandler("second")}>
-        <Arrow src={arrowDown} isOpen={active === "second"} />
+        <Arrow src={arrowDown} isOpen={active.button2 === true} />
         <ComponentTitle>contacts</ComponentTitle>
       </ComponentDiv>
-      {active === "second" ? <Contacts /> : null}
+      {active.button2 === true ? <Contacts /> : null}
+      <Information/>
     </>
   );
 }
