@@ -61,12 +61,15 @@ const MainDiv = styled.div`
   //   padding: 15px;
   height: 81vh;
   overflow-y: auto; 
-  :-webkit-scrollbar {
-    width: 10px; 
-    height: 10px; 
+  &::-webkit-scrollbar {
+    background: rgb(1, 18, 33);
+    border-radius: 5px;
+    transition: all 0.5s ease 0s;
+    width: 12px;
   }
-  :-webkit-scrollbar-track {
-    background:  rgba(1, 22, 39, 0.95);
-    border-radius: 10px;
+  &::-webkit-scrollbar-track {
+    background: rgb(30, 45, 61);
+    transition: all 0.5s ease 0s;
+    outline: rgb(28, 43, 58) solid 1px;
   }
 `;
