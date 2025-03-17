@@ -1,29 +1,29 @@
 import styled from "styled-components";
-import { useState } from "react";
-import arrowDown from "../../../assets/caret-down-solid.svg";
-import ProjectsFilter from "./ProjectsFilter";
+import Contacts from "../About_me/About_me_components.tsx/contacts";
+import arrowDown from "../../assets/caret-down-solid.svg";
+import FindMe from "./FindMe";
 
-function Projects() {
-  const [toggle, setToggle] = useState(false);
+function ContactMe() {
+  const toggle = true;
   return (
-    <ProjectsDiv>
-      <PageTitle>_about-me</PageTitle>
-      <ComponentDiv
-        onClick={() => {
-          setToggle(!toggle);
-        }}
-      >
+    <ContactMeDiv>
+      <ComponentDiv>
         <Arrow src={arrowDown} isOpen={toggle === true} />
         <ComponentTitle>personal_info</ComponentTitle>
       </ComponentDiv>
-      <ProjectsFilter/>
-    </ProjectsDiv>
+      <Contacts />
+      <ComponentDiv>
+        <Arrow src={arrowDown} isOpen={toggle === true} />
+        <ComponentTitle>find_me_also_in</ComponentTitle>
+      </ComponentDiv>  
+    <FindMe/>
+    </ContactMeDiv>
   );
 }
 
-export default Projects;
+export default ContactMe;
 
-const ProjectsDiv = styled.div`
+const ContactMeDiv = styled.div`
   display: flex;
   flex-direction: column;
   //   justify-content: space-around;
@@ -32,15 +32,7 @@ const ProjectsDiv = styled.div`
   //   padding: 15px;
   height: 81vh;
   overflow-y: auto;
-`;
-
-const PageTitle = styled.h2`
-  font-family: "Fira code", sans-serif;
-  margin: 15px;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: left;
-  color: #fff;
+  padding: 15px;
 `;
 const ComponentDiv = styled.div`
   display: flex;

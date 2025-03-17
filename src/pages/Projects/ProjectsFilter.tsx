@@ -43,8 +43,8 @@ const FilterDiv = styled.div`
   justify-content: left;
   gap: 10px;
 `;
-const FilterInput = styled.input`
- 
+const FilterInput = styled.input.attrs({ type: 'checkbox' })`
+
 `;
 const FilterName = styled.p`
   font-weight: 200;
