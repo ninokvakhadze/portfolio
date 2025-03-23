@@ -22,10 +22,10 @@ function Project() {
 export default Project;
 
 const ProjectDiv = styled.div`
-width: 100%;
+  /* flex: 1 1 300px; */
 `;
 const ProjectCard = styled.div`
-  height: 328px;
+  height: 360px;
   padding: 0 0 32px;
   margin: 2px;
   border-radius: 15px;
@@ -45,12 +45,12 @@ const ProjectTitleSpan = styled.span`
 
 const ProjectImg = styled.img`
   width: 100%;
-  height: 50%;
   border-radius: 15px;
+  height: 200px;
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

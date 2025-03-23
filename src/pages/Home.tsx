@@ -30,6 +30,7 @@ const HomeDiv = styled.div`
   background-color: rgba(1, 22, 39, 0.95);
   padding: 15px;
   min-height: 81vh;
+  border: 1px solid #1e2d3d;
 
 `;
 const Introduction = styled.div``;

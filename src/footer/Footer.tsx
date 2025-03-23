@@ -25,14 +25,16 @@ const FooterDiv = styled.footer`
   bottom: 0;
   width: 100%;
   background-color: rgba(1, 22, 39);
-  padding: 15px;
-  border-top: 1px solid #1e2d3d;
+  /* padding: 15px; */
   display: flex;
   justify-content: space-between;
+  border: 1px solid #1e2d3d;
 `;
 const FindMeFooter = styled.div`
   display: flex;
   gap: 10px;
+  padding: 15px;
+  border: 1px solid #1e2d3d;
 `;
 const FindMeFooterText = styled.p`
   font-family: FiraCode-Retina;

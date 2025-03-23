@@ -35,10 +35,11 @@ const ProjectsDiv = styled.div`
   //   justify-content: space-around;
   width: 94vw;
   background-color: rgba(1, 22, 39, 0.95);
-  //   padding: 15px;
+  padding: 15px;
   height: 81vh;
   overflow-y: auto;
   padding: 15px;
+  border: 1px solid #1e2d3d;
 `;
 
 const PageTitle = styled.h2`
@@ -77,8 +78,7 @@ const Arrow = styled.img<{ isOpen: boolean }>`
 `;
 const ProjectsBox = styled.div`
   margin-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;

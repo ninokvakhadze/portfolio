@@ -1,22 +1,42 @@
 import styled from "styled-components";
+import { useState } from "react";
 import Contacts from "../About_me/About_me_components.tsx/contacts";
 import arrowDown from "../../assets/caret-down-solid.svg";
 import FindMe from "./FindMe";
+import Email from "./Email";
 
 function ContactMe() {
-  const toggle = true;
+  const [toggle, setToggle] = useState<{ button1: boolean; button2: boolean }>({
+    button1: true,
+    button2: false,
+  });
+  const ToggleContact = (button: "first" | "second") => {
+    setToggle((prev) => ({
+      button1: button === "first" ? !prev.button1 : prev.button1,
+      button2: button === "second" ? !prev.button2 : prev.button2,
+    }));
+  };
   return (
     <ContactMeDiv>
-      <ComponentDiv>
-        <Arrow src={arrowDown} isOpen={toggle === true} />
+      <ComponentDiv
+        onClick={() => {
+          ToggleContact("first");
+        }}
+      >
+        <Arrow src={arrowDown} isOpen={toggle.button1 === true} />
         <ComponentTitle>personal_info</ComponentTitle>
       </ComponentDiv>
-      <Contacts />
-      <ComponentDiv>
-        <Arrow src={arrowDown} isOpen={toggle === true} />
+      {toggle.button1 ? <Contacts /> : null}
+      <ComponentDiv
+        onClick={() => {
+          ToggleContact("second");
+        }}
+      >
+        <Arrow src={arrowDown} isOpen={toggle.button2 === true} />
         <ComponentTitle>find_me_also_in</ComponentTitle>
-      </ComponentDiv>  
-    <FindMe/>
+      </ComponentDiv>
+      {toggle.button2? <FindMe /> : null}
+      <Email/>
     </ContactMeDiv>
   );
 }
@@ -31,8 +51,20 @@ const ContactMeDiv = styled.div`
   background-color: rgba(1, 22, 39, 0.95);
   //   padding: 15px;
   height: 81vh;
+  border: 1px solid #1e2d3d;
   overflow-y: auto;
   padding: 15px;
+  &::-webkit-scrollbar {
+    background: rgb(1, 18, 33);
+    border-radius: 5px;
+    transition: all 0.5s ease 0s;
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgb(30, 45, 61);
+    transition: all 0.5s ease 0s;
+    outline: rgb(28, 43, 58) solid 1px;
+  }
 `;
 const ComponentDiv = styled.div`
   display: flex;

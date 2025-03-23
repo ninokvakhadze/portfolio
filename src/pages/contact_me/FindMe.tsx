@@ -6,15 +6,15 @@ const FindMe: React.FC = () => {
     <FindMeDiv>
       <LinkDiv>
         <LinkImg src={linkimg} />
-        <FindMeLink href="https://www.instagram.com">Instagram</FindMeLink>
+        <FindMeLink href="https://www.instagram.com/nino_kvakhadze/">Instagram</FindMeLink>
       </LinkDiv>
       <LinkDiv>
         <LinkImg src={linkimg} />
-        <FindMeLink href="https://www.twitter.com">Twitter</FindMeLink>
+        <FindMeLink href="https://x.com/ninokvakhadze?s=21">X</FindMeLink>
       </LinkDiv>
       <LinkDiv>
         <LinkImg src={linkimg} />
-        <FindMeLink href="https://www.linkedin.com">LinkedIn</FindMeLink>
+        <FindMeLink href="https://www.linkedin.com/in/nino-kvakhadze-654a0a255/">LinkedIn</FindMeLink>
       </LinkDiv>
     </FindMeDiv>
   );
@@ -28,6 +28,7 @@ const FindMeDiv = styled.div`
   flex-direction: column;
   margin-top: 10px;
   gap: 10px;
+  padding: 15px;
 `;
 
 const LinkDiv = styled.div`
