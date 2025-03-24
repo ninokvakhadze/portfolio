@@ -44,13 +44,15 @@ const Name = styled.h1`
   text-align: left;
   color: #607b96;
   padding: 15px;
+   @media screen and (min-width: 768px) {
   border: 1px solid #1e2d3d;
+  }
 `;
 const Hamburger = styled.img`
   width: 16px;
   height: 16px;
   margin: 15px;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 `;

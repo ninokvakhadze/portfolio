@@ -34,7 +34,9 @@ const FindMeFooter = styled.div`
   display: flex;
   gap: 10px;
   padding: 15px;
+    @media screen and (min-width: 768px) {
   border: 1px solid #1e2d3d;
+  }
 `;
 const FindMeFooterText = styled.p`
   font-family: FiraCode-Retina;
