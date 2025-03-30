@@ -1,13 +1,8 @@
 import "./App.css";
-import {  useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Header from "./header/Header";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import About_me from "./pages/About_me/About_me";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects/Projects";
@@ -41,4 +36,7 @@ const Main = styled.main`
   background-size: 100%;
   width: 100%;
   position: relative;
+  @media screen and (min-width: 1440px) {
+    background: rgba(1, 22, 39, 0.95);
+  }
 `;

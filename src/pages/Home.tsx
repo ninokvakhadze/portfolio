@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import DesktopBackground from "../assets/bg-main-desktop.png";
+import CodeSnippets from "../desktop-components/Code-snippets";
 
 function Home() {
   return (
     <HomeDiv>
+      <IntroDiv>
       <Introduction>
         <Hello>
           Hi all. I am <br />
@@ -16,6 +19,8 @@ function Home() {
           <Variable>const</Variable> <VarName>githubLink</VarName> = <Linked href="https://github.com/ninokvakhadze">"https://github.com/ninokvakhadze"</Linked>
         </GitLink>
       </FindMe>
+      </IntroDiv>
+      <CodeSnippets/>
     </HomeDiv>
   );
 }
@@ -24,15 +29,25 @@ export default Home;
 
 const HomeDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
   width: 94vw;
   background-color: rgba(1, 22, 39, 0.95);
   padding: 15px;
   min-height: 81vh;
   border: 1px solid #1e2d3d;
-
+  justify-content: space-between;
+  background-size: cover;
+  @media screen and (min-width: 1440px) {
+    background-image: url(${DesktopBackground});
+    background-repeat:no-repeat;
+    background-position: left 200px top -240px;
+  }
 `;
+const IntroDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`
 const Introduction = styled.div``;
 const Hello = styled.h2`
   font-family: "Fira code", sans-serif;
