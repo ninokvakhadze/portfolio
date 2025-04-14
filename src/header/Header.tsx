@@ -44,8 +44,11 @@ const Name = styled.h1`
   text-align: left;
   color: #607b96;
   padding: 15px;
-   @media screen and (min-width: 768px) {
-  border: 1px solid #1e2d3d;
+  @media screen and (min-width: 768px) {
+    border: 1px solid #1e2d3d;
+  }
+  @media screen and (min-width: 1440px) {
+    padding: 15px 60px;
   }
 `;
 const Hamburger = styled.img`

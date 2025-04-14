@@ -13,7 +13,11 @@ export default function CodeSnippets() {
 }
 
 const CodeDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;

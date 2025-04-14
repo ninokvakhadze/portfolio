@@ -7,24 +7,33 @@ import { useAboutMe } from "../About_me";
 function AboutMeNav() {
   const { toggleHandler, active } = useAboutMe();
   return (
-    <>
-      <PageTitle>_about-me</PageTitle>
-      <ComponentDiv onClick={() => toggleHandler("first")}>
-        <Arrow src={arrowDown} isOpen={active.button1 === true} />
-        <ComponentTitle>personal_info</ComponentTitle>
-      </ComponentDiv>
-      {active.button1 == true ? <Personal /> : null}
-      <ComponentDiv onClick={() => toggleHandler("second")}>
-        <Arrow src={arrowDown} isOpen={active.button2 === true} />
-        <ComponentTitle>contacts</ComponentTitle>
-      </ComponentDiv>
-      {active.button2 === true ? <Contacts /> : null}
-      <Information/>
-    </>
+    <AboutDiv>
+      <DesktopComponent>
+        <PageTitle>_about-me</PageTitle>
+        <ComponentDiv onClick={() => toggleHandler("first")}>
+          <Arrow src={arrowDown} isOpen={active.button1 === true} />
+          <ComponentTitle>personal_info</ComponentTitle>
+        </ComponentDiv>
+        {active.button1 == true ? <Personal /> : null}
+        <ComponentDiv onClick={() => toggleHandler("second")}>
+          <Arrow src={arrowDown} isOpen={active.button2 === true} />
+          <ComponentTitle>contacts</ComponentTitle>
+        </ComponentDiv>
+        {active.button2 === true ? <Contacts /> : null}
+      </DesktopComponent>
+      <Information />
+    </AboutDiv>
   );
 }
 
 export default AboutMeNav;
+
+const AboutDiv = styled.div`
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    min-width:800px;
+  }
+`;
 
 const PageTitle = styled.h2`
   font-family: "Fira code", sans-serif;
@@ -59,4 +68,8 @@ const Arrow = styled.img<{ isOpen: boolean }>`
     `
       transform: rotate(0deg);
     `}
+`;
+const DesktopComponent = styled.div`
+  @media screen and (min-width: 1440px) {
+  min-width: 260px
 `;
