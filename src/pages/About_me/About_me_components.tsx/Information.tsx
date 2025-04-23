@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { useAboutMe } from "../About_me";
+import DesktopTitles from "./DesktopTitles.tsx"; 
 
 function Information() {
   const { activeFile } = useAboutMe();
   return (
     <InformationDiv>
+       <DesktopTitles />
       <InformationTitle>
         // _{activeFile ? "personal" : "professional"}-info
       </InformationTitle>
