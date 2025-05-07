@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { createContext, useState, useContext } from "react";
 import AboutMeNav from "./About_me_components.tsx/AboutMeNav";
-import DesktopTitles from "./About_me_components.tsx/DesktopTitles";
 
 type ActiveState = { button1: boolean; button2: boolean };
 
@@ -52,7 +51,7 @@ const About_me: React.FC = () => {
 
   return (
     <AboutMeContext.Provider
-      value={{ activeFile, setActiveFile, toggleHandler, active, setActive, setDesktopTitleButtons, desktopTitleButtons}}
+      value={{ activeFile, setActiveFile, toggleHandler, active, setActive, setDesktopTitleButtons, desktopTitleButtons }}
     >
       <MainDiv>
        

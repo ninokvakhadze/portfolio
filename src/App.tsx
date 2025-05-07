@@ -12,7 +12,7 @@ import bacgroundImg from "./assets/df884c2af6c9e7fcbc6c7809c12cc684.jpg";
 
 function App() {
   const [toggle, setToggle] = useState<boolean>(false);
-  const location = useLocation(); // You can safely use useLocation here
+  const location = useLocation(); 
 
   return (
     <Main>

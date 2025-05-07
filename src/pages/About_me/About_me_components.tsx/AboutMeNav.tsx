@@ -5,7 +5,7 @@ import Personal from "./Personal";
 import Information from "./Information";
 import { useAboutMe } from "../About_me";
 function AboutMeNav() {
-  const { toggleHandler, active } = useAboutMe();
+  const { toggleHandler, active, setDesktopTitleButtons } = useAboutMe();
   return (
     <AboutDiv>
       <DesktopComponent>
