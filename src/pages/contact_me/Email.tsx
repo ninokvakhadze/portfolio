@@ -1,26 +1,67 @@
 import styled from "styled-components";
+import sendMail from "./email";
+import { useState } from "react";
 
 function Email() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendMail({
+      subject: `Contact from ${formData.name}`,
+      text: formData.message,
+      html: `<p>${formData.message}</p>`,
+      from: formData.email,
+    })
+      .then(() => {
+        alert('Email sent successfully!');
+      })
+      .catch((error) => {  console.error('Error sending email:', error);
+        alert('Failed to send email. Please try again later.');
+      });
+    console.log('Form submitted:', formData);
+  };
   return (
-    <EmailDiv>
+    <EmailDiv onSubmit={handleSubmit}>
       <EmailComponent>
         <EmailTitle>_name:</EmailTitle>
-        <EmailInput />
+        <EmailInput
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
       </EmailComponent>
       <EmailComponent>
         <EmailTitle>_email:</EmailTitle>
-        <EmailInput />
+        <EmailInput
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
       </EmailComponent>
       <EmailComponent>
-        <EmailTitle>_email:</EmailTitle>
-        <EmailTextArea />
+        <EmailTitle>_message:</EmailTitle>
+        <EmailTextArea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+        />
       </EmailComponent>
+      <button type="submit">Send</button>
     </EmailDiv>
   );
 }
 
 export default Email;
-const EmailDiv = styled.div`
+const EmailDiv = styled.form`
   margin-top: 20px;
   display: flex;
   flex-direction: column;

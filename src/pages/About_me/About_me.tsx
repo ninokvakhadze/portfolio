@@ -36,7 +36,7 @@ const About_me: React.FC = () => {
     button2: boolean;
   }>({
     button1: true,
-    button2: false,
+    button2: true,
   });
 
 

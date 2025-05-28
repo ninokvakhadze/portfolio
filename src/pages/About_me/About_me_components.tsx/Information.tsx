@@ -23,13 +23,18 @@ export default Information;
 
 const InformationDiv = styled.div`
   padding: 15px;
+  positionn: relative;
+  top: 0;     
+  left: 0;
 `;
 const InformationTitle = styled.h2`
+margin-top: 60px;
   font-family: "Fira code", sans-serif;
   color: #fff;
   font-size: 16px;
 `;
 const InformationText = styled.p`
+
   font-family: "Fira code", sans-serif;
   color: #607b96;
   margin-top: 15px;

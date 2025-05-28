@@ -4,7 +4,8 @@ import cancel from "../../../assets/xmark-solid.svg";
 import { useAboutMe } from "../About_me";
 
 const DesktopTitles: React.FC = () => {
-  const { desktopTitleButtons, setDesktopTitleButtons } = useAboutMe();
+  const { desktopTitleButtons = { button1: false, button2: false }, setDesktopTitleButtons } = useAboutMe();
+  React.useEffect(() => {}, [desktopTitleButtons]);
   return (
     <TitlesDiv>
       {desktopTitleButtons.button1 && (
@@ -14,7 +15,7 @@ const DesktopTitles: React.FC = () => {
             src={cancel}
             alt="cancel"
             onClick={() =>
-              setDesktopTitleButtons((prev) => ({ ...prev, button1: false }))
+              setDesktopTitleButtons((prev: any) => ({ ...prev, button1: false }))
             }
           />
         </Title>
@@ -41,6 +42,9 @@ export default DesktopTitles;
 const TitlesDiv = styled.div`
   display: flex;
   margin: -15px 0 0 -18px;
+  position: fixed;
+  // top: 0;
+  // left: 0;
 `;
 
 const Title = styled.div`
@@ -53,6 +57,7 @@ const Title = styled.div`
   display: flex;
   gap: 35px;
   justify-content: space-between;
+  
 `;
 const Cancel = styled.img`
   width: 16px;

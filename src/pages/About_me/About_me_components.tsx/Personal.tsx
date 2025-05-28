@@ -8,15 +8,16 @@ import { useAboutMe } from "../About_me";
 
 export default function Personal() {
   const {  setActiveFile, activeFile } = useAboutMe();
+  const { setDesktopTitleButtons } = useAboutMe();
 
   return (
     <PersonalDiv>
-      <FileDiv onClick={() => {setActiveFile(true)}} >
+      <FileDiv onClick={() => {setActiveFile(true), setDesktopTitleButtons((prev: any) => ({ ...prev, button1: true}))}} >
         <FileArrow src={fileArrow} active={activeFile == true}/>
         <FileImg src={fileImg1} />
         <FileName>personal</FileName>
       </FileDiv>
-      <FileDiv onClick={() => {setActiveFile(false)}}>
+      <FileDiv onClick={() => {setActiveFile(false), setDesktopTitleButtons((prev: any) => ({ ...prev, button2: true}))} }>
         <FileArrow src={fileArrow} active={activeFile == false}/>
         <FileImg src={fileImg2} />
         <FileName>professional</FileName>

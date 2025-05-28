@@ -5,17 +5,21 @@ import Personal from "./Personal";
 import Information from "./Information";
 import { useAboutMe } from "../About_me";
 function AboutMeNav() {
-  const { toggleHandler, active, setDesktopTitleButtons } = useAboutMe();
+  const { toggleHandler, active} = useAboutMe();
   return (
     <AboutDiv>
       <DesktopComponent>
         <PageTitle>_about-me</PageTitle>
-        <ComponentDiv onClick={() => toggleHandler("first")}>
+        <ComponentDiv onClick={() => { 
+          toggleHandler("first"); 
+        }}>
           <Arrow src={arrowDown} isOpen={active.button1 === true} />
           <ComponentTitle>personal_info</ComponentTitle>
         </ComponentDiv>
-        {active.button1 == true ? <Personal /> : null}
-        <ComponentDiv onClick={() => toggleHandler("second")}>
+        {active.button1 === true ? <Personal /> : null}
+        <ComponentDiv onClick={() => { 
+          toggleHandler("second"); 
+        }}>
           <Arrow src={arrowDown} isOpen={active.button2 === true} />
           <ComponentTitle>contacts</ComponentTitle>
         </ComponentDiv>
