@@ -1,62 +1,54 @@
 import styled from "styled-components";
-import sendMail from "./email";
-import { useState } from "react";
+import { useRef, FormEvent } from "react";
+import { sendForm } from "emailjs-com";
 
 function Email() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const form = useRef<HTMLFormElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    sendMail({
-      subject: `Contact from ${formData.name}`,
-      text: formData.message,
-      html: `<p>${formData.message}</p>`,
-      from: formData.email,
-    })
-      .then(() => {
-        alert('Email sent successfully!');
-      })
-      .catch((error) => {  console.error('Error sending email:', error);
-        alert('Failed to send email. Please try again later.');
-      });
-    console.log('Form submitted:', formData);
+
+    if (form.current) {
+      sendForm(
+        "service_zsceijy",      
+        "template_9fmv9it",      
+        form.current,
+        "f7e9IqjQfgCSIoZbB"    
+      )
+        .then(() => {
+          alert("Your message has been sent!");
+        })
+        .catch((error) => {
+          console.error("Failed to send:", error);
+          alert("Failed to send the message.");
+        });
+
+      e.currentTarget.reset(); 
+    }
   };
+
   return (
-    <EmailDiv onSubmit={handleSubmit}>
-      <EmailComponent>
-        <EmailTitle>_name:</EmailTitle>
-        <EmailInput
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </EmailComponent>
-      <EmailComponent>
-        <EmailTitle>_email:</EmailTitle>
-        <EmailInput
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </EmailComponent>
-      <EmailComponent>
-        <EmailTitle>_message:</EmailTitle>
-        <EmailTextArea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </EmailComponent>
-      <button type="submit">Send</button>
-    </EmailDiv>
+   <EmailDiv ref={form} onSubmit={sendEmail}>
+    <input type="hidden" name="to_email" value="ninokvakhadze2@gmail.com" />
+  <EmailComponent>
+    <EmailTitle>_subject:</EmailTitle>
+    <EmailInput name="subject" placeholder="Subject" required />
+  </EmailComponent>
+  <EmailComponent>
+    <EmailTitle>_email:</EmailTitle>
+    <EmailInput
+      type="email"
+      name="user_email"
+      placeholder="Your email"
+      required
+    />
+  </EmailComponent>
+  <EmailComponent>
+    <EmailTitle>_message:</EmailTitle>
+    <EmailTextArea name="message" placeholder="Your message" required />
+  </EmailComponent>
+  <button type="submit">Send</button>
+</EmailDiv>
   );
 }
 

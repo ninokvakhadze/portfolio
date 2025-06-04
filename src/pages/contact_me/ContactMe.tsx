@@ -3,7 +3,7 @@ import { useState } from "react";
 import Contacts from "../About_me/About_me_components.tsx/contacts";
 import arrowDown from "../../assets/caret-down-solid.svg";
 import FindMe from "./FindMe";
-import Email from "./Email";
+import Email from "./Email.tsx";
 
 function ContactMe() {
   const [toggle, setToggle] = useState<{ button1: boolean; button2: boolean }>({
