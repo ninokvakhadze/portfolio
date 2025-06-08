@@ -9,9 +9,9 @@
             "react",
             "vite"
         ],
-        "liveLink": "https://your-portfolio-link.com",
+        "liveLink": "https://pomodor-app-lake.vercel.app",
         "githubLink": "https://github.com/ninokvakhadze?tab=repositories",
-        "image": "https://your-portfolio-link.com/portfolio-image.jpg"
+        "image": "images/id1.png"
     },
     {
         "id": 2,
