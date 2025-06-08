@@ -1,0 +1,131 @@
+[
+    {
+        "id": 1,
+        "title": "Pomodoro",
+        "description": "website for time management.",
+        "technologies": [
+            "styled-components",
+            "ts",
+            "react",
+            "vite"
+        ],
+        "liveLink": "https://your-portfolio-link.com",
+        "githubLink": "https://github.com/ninokvakhadze?tab=repositories",
+        "image": "https://your-portfolio-link.com/portfolio-image.jpg"
+    },
+    {
+        "id": 2,
+        "title": "entertainment web app",
+        "description": "An online platform to watch movies and series.",
+        "technologies": [
+            "styled-components",
+            "ts",
+            "react",
+            "vite"
+        ],
+        "liveLink": "https://entertainment-web-app-bice.vercel.app",
+        "githubLink": "https://github.com/ninokvakhadze/entertainment-web-app",
+        "image": "/images/id2.png"
+    },
+    {
+        "id": 3,
+        "title": "7 school",
+        "description": "website for tkibuli 7 school.",
+        "technologies": [
+            "styled-components",
+            "ts",
+            "react",
+            "vite",
+            "node",
+            "express",
+            "mongodb",
+            "API"
+        ],
+        "githubLink": "https://github.com/ninokvakhadze/7school",
+        "image": "/images/id3.png"
+    },
+    {
+        "id": 4,
+        "title": "planet facts",
+        "description": "read interesting facts about planets.",
+        "technologies": [
+            "styled-components",
+            "ts",
+            "react",
+            "vite"
+        ],
+        "liveLink": "https://planets-facts-site-psi.vercel.app/mercury",
+        "githubLink": "https://github.com/ninokvakhadze/planets-facts-site",
+        "image": "/images/id4.png"
+    },
+    {
+        "id": 5,
+        "title": "Clock",
+        "description": "A simple digital and analog clock application.",
+        "technologies": [
+            "react",
+            "ts"
+        ],
+        "liveLink": "https://clock-app-taupe.vercel.app",
+        "githubLink": "https://github.com/ninokvakhadze/clock-app",
+        "image": "/images/id5.png"
+    },
+    {
+        "id": 6,
+        "title": "GitHub User Search",
+        "description": "Search and view GitHub user profiles.",
+        "technologies": [
+            "react",
+            "ts",
+            "API"
+        ],
+        "liveLink": "https://github-user-search-app-ochre.vercel.app",
+        "githubLink": "https://github.com/ninokvakhadze/github-user-search-app",
+        "image": "/images/id6.png"
+    },
+    {
+        "id": 7,
+        "title": "Tip Calculator",
+        "description": "A simple tip calculator.",
+        "technologies": [
+            "js"
+        ],
+        "liveLink": "https://ninokvakhadze.github.io/tip-calculator/",
+        "githubLink": "https://github.com/ninokvakhadze/tip-calculator",
+        "image": "/images/id7.png"
+    },
+    {
+        "id": 8,
+        "title": "Password Generator",
+        "description": "Generate secure random passwords.",
+        "technologies": [
+            "js"
+        ],
+        "liveLink": "https://ninokvakhadze.github.io/password-generator/",
+        "githubLink": "https://github.com/ninokvakhadze/password-generator-app",
+        "image": "/images/id8.png"
+    },
+    {
+        "id": 9,
+        "title": "Calculator",
+        "description": "A simple calculator for basic arithmetic operations.",
+        "technologies": [
+            "js"
+        ],
+        "liveLink": "https://ninokvakhadze.github.io/calculator/",
+        "githubLink": "https://github.com/ninokvakhadze/calculator",
+        "image": "/images/id9.png"
+    },
+    {
+        "id": 10,
+        "title": "Advice Generator App",
+        "description": "Get random advice with this simple app.",
+        "technologies": [
+            "js",
+            "API"
+        ],
+        "liveLink": "https://ninokvakhadze.github.io/advice-generator-app/",
+        "githubLink": "https://github.com/ninokvakhadze/advice-generator-app",
+        "image": "/images/id10.png"
+    }
+]

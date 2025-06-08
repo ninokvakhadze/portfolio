@@ -3,6 +3,17 @@ import { useState } from "react";
 import arrowDown from "../../assets/caret-down-solid.svg";
 import ProjectsFilter from "./ProjectsFilter";
 import Project from "./Project";
+import data from "../../data/data.json";
+
+export type ProjectData = {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  image?: string;
+  githubLink?: string;
+  liveLink?: string;
+};
 
 function Projects() {
   const [toggle, setToggle] = useState(false);
@@ -19,9 +30,9 @@ function Projects() {
       </ComponentDiv>
       {toggle ? <ProjectsFilter /> : null}
       <ProjectsBox>
-        <Project />
-        <Project />
-        <Project />
+        {data.map((project: ProjectData) => (
+          <Project key={project.id} {...project} />
+        ))}
       </ProjectsBox>
     </ProjectsDiv>
   );

@@ -1,19 +1,26 @@
 import styled from "styled-components";
-import image from "../../assets/df884c2af6c9e7fcbc6c7809c12cc684.jpg";
+import { ProjectData } from "./Projects";
 
-function Project() {
+const Project = ({
+  id,
+  title,
+  description,
+  technologies,
+  liveLink,
+  githubLink,
+  image,
+}: ProjectData) =>  {
   return (
     <ProjectDiv>
       <ProjectTitle>
-        Project 1 <ProjectTitleSpan>/ name</ProjectTitleSpan>
+        Project {id} <ProjectTitleSpan>/ {title}</ProjectTitleSpan>
       </ProjectTitle>
       <ProjectCard>
         <ProjectImg src={image} />
         <ProjectDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate
-          tempus efficitur.
+          {description}
         </ProjectDescription>
-        <ProjectButton>view-project</ProjectButton>
+        <ProjectButton><a href={liveLink}>view-project</a></ProjectButton>
       </ProjectCard>
     </ProjectDiv>
   );
