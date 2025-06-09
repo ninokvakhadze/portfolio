@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrowDown from "../../assets/caret-down-solid.svg";
 import ProjectsFilter from "./ProjectsFilter";
 import Project from "./Project";
@@ -15,8 +15,24 @@ export type ProjectData = {
   liveLink?: string;
 };
 
+
 function Projects() {
+  const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>(data);
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    if (selectedTechs.length === 0) {
+      setFilteredProjects(data);
+    } else {
+      setFilteredProjects(
+        data.filter((project) =>
+          selectedTechs.every((tech) => project.technologies.includes(tech))
+        )
+      );
+    }
+  }, [selectedTechs]);
+
   return (
     <ProjectsDiv>
       <PageTitle>_about-me</PageTitle>
@@ -28,9 +44,13 @@ function Projects() {
         <Arrow src={arrowDown} isOpen={toggle === true} />
         <ComponentTitle>personal_info</ComponentTitle>
       </ComponentDiv>
-      {toggle ? <ProjectsFilter /> : null}
+      {toggle ? (
+        <ProjectsFilter
+        selectedTechs={selectedTechs} setSelectedTechs={setSelectedTechs} 
+        />
+      ) : null}
       <ProjectsBox>
-        {data.map((project: ProjectData) => (
+        {filteredProjects.map((project: ProjectData) => (
           <Project key={project.id} {...project} />
         ))}
       </ProjectsBox>
@@ -43,13 +63,11 @@ export default Projects;
 const ProjectsDiv = styled.div`
   display: flex;
   flex-direction: column;
-  //   justify-content: space-around;
   width: 94vw;
   background-color: rgba(1, 22, 39, 0.95);
   padding: 15px;
   height: 81vh;
   overflow-y: auto;
-  padding: 15px;
   border: 1px solid #1e2d3d;
 `;
 
@@ -61,6 +79,7 @@ const PageTitle = styled.h2`
   text-align: left;
   color: #fff;
 `;
+
 const ComponentDiv = styled.div`
   display: flex;
   justify-content: left;
@@ -68,7 +87,9 @@ const ComponentDiv = styled.div`
   background-color: #1e2d3d;
   gap: 2.5px;
   margin-bottom: 5px;
+  cursor: pointer;
 `;
+
 const ComponentTitle = styled.p`
   font-family: "Fira code", sans-serif;
   font-size: 14px;
@@ -76,6 +97,7 @@ const ComponentTitle = styled.p`
   text-align: left;
   color: #fff;
 `;
+
 const Arrow = styled.img<{ isOpen: boolean }>`
   width: 16px;
   height: 16px;
@@ -87,9 +109,11 @@ const Arrow = styled.img<{ isOpen: boolean }>`
       transform: rotate(0deg);
     `}
 `;
+
 const ProjectsBox = styled.div`
   margin-top: 15px;
   gap: 15px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
+

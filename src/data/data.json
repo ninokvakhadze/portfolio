@@ -4,9 +4,9 @@
         "title": "Pomodoro",
         "description": "website for time management.",
         "technologies": [
-            "styled-components",
-            "ts",
-            "react",
+            "Styled-components",
+            "Typescript",
+            "React",
             "vite"
         ],
         "liveLink": "https://pomodor-app-lake.vercel.app",
@@ -18,9 +18,9 @@
         "title": "entertainment web app",
         "description": "An online platform to watch movies and series.",
         "technologies": [
-            "styled-components",
-            "ts",
-            "react",
+            "Styled-components",
+            "Typescript",
+            "React",
             "vite"
         ],
         "liveLink": "https://entertainment-web-app-bice.vercel.app",
@@ -32,11 +32,11 @@
         "title": "7 school",
         "description": "website for tkibuli 7 school.",
         "technologies": [
-            "styled-components",
-            "ts",
-            "react",
+            "Styled-components",
+            "Typescript",
+            "React",
             "vite",
-            "node",
+            "Node",
             "express",
             "mongodb",
             "API"
@@ -49,9 +49,9 @@
         "title": "planet facts",
         "description": "read interesting facts about planets.",
         "technologies": [
-            "styled-components",
-            "ts",
-            "react",
+            "Styled-components",
+            "Typescript",
+            "React",
             "vite"
         ],
         "liveLink": "https://planets-facts-site-psi.vercel.app/mercury",
@@ -63,8 +63,8 @@
         "title": "Clock",
         "description": "A simple digital and analog clock application.",
         "technologies": [
-            "react",
-            "ts"
+            "React",
+            "Typescript"
         ],
         "liveLink": "https://clock-app-taupe.vercel.app",
         "githubLink": "https://github.com/ninokvakhadze/clock-app",
@@ -75,8 +75,8 @@
         "title": "GitHub User Search",
         "description": "Search and view GitHub user profiles.",
         "technologies": [
-            "react",
-            "ts",
+            "React",
+            "Typescript",
             "API"
         ],
         "liveLink": "https://github-user-search-app-ochre.vercel.app",
@@ -88,7 +88,7 @@
         "title": "Tip Calculator",
         "description": "A simple tip calculator.",
         "technologies": [
-            "js"
+            "Javascript"
         ],
         "liveLink": "https://ninokvakhadze.github.io/tip-calculator/",
         "githubLink": "https://github.com/ninokvakhadze/tip-calculator",
@@ -99,7 +99,7 @@
         "title": "Password Generator",
         "description": "Generate secure random passwords.",
         "technologies": [
-            "js"
+            "Javascript"
         ],
         "liveLink": "https://ninokvakhadze.github.io/password-generator/",
         "githubLink": "https://github.com/ninokvakhadze/password-generator-app",
@@ -110,7 +110,7 @@
         "title": "Calculator",
         "description": "A simple calculator for basic arithmetic operations.",
         "technologies": [
-            "js"
+            "Javascript"
         ],
         "liveLink": "https://ninokvakhadze.github.io/calculator/",
         "githubLink": "https://github.com/ninokvakhadze/calculator",
@@ -121,7 +121,7 @@
         "title": "Advice Generator App",
         "description": "Get random advice with this simple app.",
         "technologies": [
-            "js",
+            "Javascript",
             "API"
         ],
         "liveLink": "https://ninokvakhadze.github.io/advice-generator-app/",
