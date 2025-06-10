@@ -15,7 +15,6 @@ export type ProjectData = {
   liveLink?: string;
 };
 
-
 function Projects() {
   const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
   const [filteredProjects, setFilteredProjects] = useState<ProjectData[]>(data);
@@ -35,20 +34,23 @@ function Projects() {
 
   return (
     <ProjectsDiv>
-      <PageTitle>_about-me</PageTitle>
-      <ComponentDiv
-        onClick={() => {
-          setToggle(!toggle);
-        }}
-      >
-        <Arrow src={arrowDown} isOpen={toggle === true} />
-        <ComponentTitle>personal_info</ComponentTitle>
-      </ComponentDiv>
-      {toggle ? (
-        <ProjectsFilter
-        selectedTechs={selectedTechs} setSelectedTechs={setSelectedTechs} 
-        />
-      ) : null}
+      <ProjectsDesktopDiv>
+        <PageTitle>_projects</PageTitle>
+        <ComponentDiv
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+        >
+          <Arrow src={arrowDown} isOpen={toggle === true} />
+          <ComponentTitle>techstack</ComponentTitle>
+        </ComponentDiv>
+        {toggle ? (
+          <ProjectsFilter
+            selectedTechs={selectedTechs}
+            setSelectedTechs={setSelectedTechs}
+          />
+        ) : null}
+      </ProjectsDesktopDiv>
       <ProjectsBox>
         {filteredProjects.map((project: ProjectData) => (
           <Project key={project.id} {...project} />
@@ -69,6 +71,26 @@ const ProjectsDiv = styled.div`
   height: 81vh;
   overflow-y: auto;
   border: 1px solid #1e2d3d;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    padding: 0
+  }
+`;
+
+const ProjectsDesktopDiv = styled.div`
+  @media screen and (min-width: 1024px) {
+    min-width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    background: rgba(1, 22, 39, 0.95);
+    z-index: 2;
+    height: 100vh;
+    overflow-y: auto;
+  }
 `;
 
 const PageTitle = styled.h2`
@@ -114,6 +136,6 @@ const ProjectsBox = styled.div`
   margin-top: 15px;
   gap: 15px;
   display: grid;
+  padding: 10px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
-

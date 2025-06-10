@@ -1,28 +1,27 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-interface HeaderProps {
-  toggle: boolean;
-}
+import type { HeaderProps } from "./Header";
 
-const Nav: React.FC<HeaderProps> = ({ toggle }) => {
+
+const Nav: React.FC<HeaderProps> = ({ toggle, setToggle }) => {
   return (
     <NavDiv toggle={toggle}>
-      <Link to="/" style={{ textDecoration: "none"}}>
+      <Link to="/" style={{ textDecoration: "none"}} onClick={() => setToggle(false)}>
         <NavName>
           <NavPath>_hello</NavPath>
         </NavName>
       </Link>
-      <Link to="/about-me" style={{ textDecoration: "none"}}>
+      <Link to="/about-me" style={{ textDecoration: "none"}} onClick={() => setToggle(false)}>
         <NavName>
           <NavPath>_about-me</NavPath>
         </NavName>
       </Link>
-      <Link to="/projects" style={{ textDecoration: "none",  }}>
+      <Link to="/projects" style={{ textDecoration: "none",  }} onClick={() => setToggle(false)}>
         <NavName>
           <NavPath>_projects</NavPath>
         </NavName>
       </Link>
-      <Link to="/contact-me" style={{ textDecoration: "none",  }}>
+      <Link to="/contact-me" style={{ textDecoration: "none",  }} onClick={() => setToggle(false)}>
         <NavName>
           <NavPath>_contact-me</NavPath>
         </NavName>

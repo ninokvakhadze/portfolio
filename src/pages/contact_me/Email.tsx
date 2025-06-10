@@ -60,7 +60,7 @@ function Email() {
         <EmailTitle>_message:</EmailTitle>
         <EmailTextArea name="message" placeholder="Your message" required />
       </EmailComponent>
-      <button type="submit">Send</button>
+      <SendButton type="submit">Send</SendButton>
     </EmailDiv>
   );
 }
@@ -71,6 +71,7 @@ const EmailDiv = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%
 `;
 const EmailComponent = styled.div`
   display: flex;
@@ -122,3 +123,29 @@ const EmailTextArea = styled.textarea`
     outline: rgb(28, 43, 58) solid 1px;
   }
 `;
+const SendButton = styled.button`
+font-family: "Fira code", sans-serif;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: #1c2b3a;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+
+  align-self: flex-end;
+  
+  transition:
+    background-color 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #2a3d50;
+  }
+
+  &:active {
+    background-color: #1a2530;
+  }
+      `

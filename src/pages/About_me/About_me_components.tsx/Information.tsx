@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useAboutMe } from "../About_me";
-import DesktopTitles from "./DesktopTitles.tsx"; 
+import DesktopTitles from "./DesktopTitles.tsx";
 
 function Information() {
   const { activeFile } = useAboutMe();
   return (
     <InformationDiv>
-       <DesktopTitles />
+      <DesktopTitles />
       <InformationTitle>
         // _{activeFile ? "personal" : "professional"}-info
       </InformationTitle>
@@ -24,17 +24,18 @@ export default Information;
 const InformationDiv = styled.div`
   padding: 15px;
   positionn: relative;
-  top: 0;     
+  top: 0;
   left: 0;
 `;
 const InformationTitle = styled.h2`
-margin-top: 60px;
   font-family: "Fira code", sans-serif;
   color: #fff;
   font-size: 16px;
+  @media screen and (min-width: 1024px) {
+    margin-top: 60px;
+  }
 `;
 const InformationText = styled.p`
-
   font-family: "Fira code", sans-serif;
   color: #607b96;
   margin-top: 15px;

@@ -3,7 +3,7 @@ import hamburger from "../assets/bars-solid.svg";
 import cancel from "../assets/xmark-solid.svg";
 import Nav from "./Nav";
 
-interface HeaderProps {
+export interface HeaderProps {
   toggle: boolean;
   setToggle: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ toggle, setToggle }) => {
         src={toggle ? cancel : hamburger}
         onClick={() => setToggle(!toggle)}
       />
-      <Nav toggle={toggle} />
+      <Nav toggle={toggle} setToggle={setToggle}/>
     </HeaderDiv>
   );
 };

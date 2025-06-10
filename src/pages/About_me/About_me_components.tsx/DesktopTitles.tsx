@@ -4,35 +4,46 @@ import cancel from "../../../assets/xmark-solid.svg";
 import { useAboutMe } from "../About_me";
 
 const DesktopTitles: React.FC = () => {
-  const { desktopTitleButtons = { button1: false, button2: false }, setDesktopTitleButtons } = useAboutMe();
+  const {
+    desktopTitleButtons = { button1: false, button2: false },
+    setDesktopTitleButtons,
+    setActiveFile,
+  } = useAboutMe();
   React.useEffect(() => {}, [desktopTitleButtons]);
   return (
     <TitlesDiv>
       {desktopTitleButtons.button1 && (
-        <Title>
+        <Title onClick={() => setActiveFile(true)}>
           <h3>personal</h3>
           <Cancel
             src={cancel}
             alt="cancel"
-            onClick={() =>
-              setDesktopTitleButtons((prev: any) => ({ ...prev, button1: false }))
-            }
+            onClick={(e) => {
+              e.stopPropagation();
+              setDesktopTitleButtons((prev: typeof desktopTitleButtons) => ({
+                ...prev,
+                button1: false,
+              }));
+            }}
           />
         </Title>
       )}
       {desktopTitleButtons.button2 && (
-        <Title>
+        <Title onClick={() => setActiveFile(false)}>
           <h3>professional</h3>
           <Cancel
             src={cancel}
             alt="cancel"
-            onClick={() =>
-              setDesktopTitleButtons((prev) => ({ ...prev, button2: false }))
-            }
+            onClick={(e) => {
+              e.stopPropagation();
+              setDesktopTitleButtons((prev: typeof desktopTitleButtons) => ({
+                ...prev,
+                button2: false,
+              }));
+            }}
           />
         </Title>
       )}
-    
     </TitlesDiv>
   );
 };
@@ -40,11 +51,14 @@ const DesktopTitles: React.FC = () => {
 export default DesktopTitles;
 
 const TitlesDiv = styled.div`
-  display: flex;
+  display: none;
   margin: -15px 0 0 -18px;
   position: fixed;
   // top: 0;
   // left: 0;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+  }
 `;
 
 const Title = styled.div`
@@ -57,7 +71,6 @@ const Title = styled.div`
   display: flex;
   gap: 35px;
   justify-content: space-between;
-  
 `;
 const Cancel = styled.img`
   width: 16px;

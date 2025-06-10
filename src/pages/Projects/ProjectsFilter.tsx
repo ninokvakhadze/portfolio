@@ -44,8 +44,10 @@ const ProjectsFilter = ({
 };
 
 export default ProjectsFilter;
+const ProjectsFilterDiv = styled.div`
+  }
+`;
 
-const ProjectsFilterDiv = styled.div``;
 
 const FilterBox = styled.div`
   display: flex;
@@ -61,7 +63,44 @@ const FilterDiv = styled.div`
 `;
 
 const FilterInput = styled.input.attrs({ type: "checkbox" })`
-  cursor: pointer;
+  appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+
+width: 18px;
+height: 18px;
+
+border: 2px solid #1e2d3d;
+background-color: #1e2d3d;
+
+border-radius: 4px;
+cursor: pointer;
+position: relative;
+outline: none;
+transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+&:checked {
+background-color: #1e2d3d;
+border-color: #1e2d3d;
+}
+
+&:checked::before {
+content: '';
+display: block;
+width: 8px;
+height: 14px;
+border: solid white;
+border-width: 0 3px 3px 0;
+transform: rotate(45deg) translate(-50%, -50%);
+position: absolute;
+top: 50%;
+left: 50%;
+opacity: 1;
+}
+
+&:focus {
+box-shadow: 0 0 0 2px rgba(30, 45, 61, 0.8);
+}
 `;
 
 const FilterName = styled.p`
